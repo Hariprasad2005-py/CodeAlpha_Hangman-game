@@ -1,0 +1,38 @@
+import random
+
+list1 = ['Bob', 'Alice', 'tree', 'chalk', 'Pen']
+word = random.choice(list1).lower()  # Convert to lowercase for simplicity
+
+guessed = []
+w_guessed = 6
+
+while w_guessed > 0:
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guessed:
+        print("You already guessed this letter")
+    else:
+        guessed.append(guess)
+
+        if guess in word:
+            print("Correct guess")
+        else:
+            print("Wrong guess")
+            w_guessed -= 1
+
+    print("You have", w_guessed, "guesses left")
+
+    word_display = ""
+    for letter in word:
+        if letter in guessed:
+            word_display += letter
+        else:
+            word_display += "_"
+    print("Word: ", word_display)
+
+    if "_" not in word_display:
+        print("You have guessed the word correctly!")
+        break
+
+if w_guessed == 0:
+    print("Game Over! The word was:", word)
