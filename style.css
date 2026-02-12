@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* LIGHT 3-Color Gradient */
+    background: linear-gradient(135deg, 
+        #cfe9ff 0%,     /* Soft Sky Blue */
+        #4789c0 50%,    /* Light Royal Blue */
+        #6ee7f9 100%    /* Fresh Aqua */
+    );
+}
+
+
+/* ================= WELCOME SCREEN ================= */
+
+.welcome-screen {
+    width: 450px;
+    padding: 40px;
+    border-radius: 25px;
+
+    background: linear-gradient(145deg, #ffffffcc, #f9f9fbcc);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.welcome-screen h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #1e3c72;
+    letter-spacing: 1px;
+}
+
+.welcome-screen img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(170, 38, 38, 0.805);
+}
+
+.welcome-screen p {
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 15px;
+}
+
+.welcome-screen button {
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #c91bd9cc, #f6c70ce6);
+    color: rgb(6, 6, 6);
+    font-weight: 600;       
+
+    transition: 0.3s ease;
+}s
+
+.welcome-screen button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ================= GAME CONTAINER ================= */
+
+.chat-container {
+    width: 450px;
+    height: 680px;
+
+    border-radius: 25px;
+    padding: 20px;
+
+    background: linear-gradient(145deg, #91ef90, #f3f7ff);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+
+    display: flex;
+    flex-direction: column;
+
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.chat-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1e3c72;
+}
+
+/* ================= CHAT AREA ================= */
+
+#chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 15px;
+}
+
+.message {
+    padding: 12px 16px;
+    margin: 10px 0;
+    max-width: 75%;
+    border-radius: 20px;
+    font-size: 14px;
+    animation: slideUp 0.3s ease;
+}
+
+/* User Bubble */
+.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #2a5298, #00c6ff);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+/* Bot Bubble */
+.bot {
+    align-self: flex-start;
+    background: #eef3ff;
+    color: #222;
+    border-bottom-left-radius: 5px;
+    border: 1px solid #d9e4ff;
+}
+
+/* ================= INPUT AREA ================= */
+
+.input-area {
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #1e3c72, #00c6ff);
+    color: white;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Restart Button */
+.restart-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    color: white;
+    font-weight: bold;
+}
+
+.restart-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Scrollbar */
+#chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #2a5298;
+    border-radius: 10px;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
